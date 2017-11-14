@@ -1,0 +1,33 @@
+{
+  "name": "qsdqt_showcase",
+  "version": "1.0.0",
+  "description": "A showcase interface for the Sussex quantum group",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build:js": "node scripts/js.js ./node_modules ./public/javascript/index.js ./public/build/bundle.js",
+    "build:css": "node scripts/css.js ./node_modules ./public/scss/styles.scss ./public/build ./public/build/styles.css",
+    "build": "npm run build:css && npm run build:js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "autoprefixer": "^6.7.3",
+    "babel-cli": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babelify": "^7.3.0",
+    "bootstrap-sass": "^3.3.6",
+    "browserify": "^14.1.0",
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
+    "log-timestamp": "^0.1.2",
+    "node-sass": "^4.5.0",
+    "node.normalize.scss": "^3.0.3",
+    "postcss-cli": "^3.0.0-beta"
+  }
+}
