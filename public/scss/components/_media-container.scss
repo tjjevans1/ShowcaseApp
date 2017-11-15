@@ -1,0 +1,18 @@
+.qt-media-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 88%;
+
+  &__pdf {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__video {
+    height: 100%;
+    width: 100%;
+  }
+}

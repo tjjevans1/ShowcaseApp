@@ -905,4 +905,28 @@ body {
 
 .qt-title {
   text-align: center; }
+
+.qt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2F2F2F;
+  opacity: 1; }
+
+.qt-media-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 80%;
+  height: 88%; }
+  .qt-media-container__pdf {
+    height: 100%;
+    width: 100%; }
+  .qt-media-container__video {
+    height: 100%;
+    width: 100%; }
 /*# sourceMappingURL=styles.css.map */
