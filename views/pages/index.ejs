@@ -9,7 +9,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-4">
-        <div class="qt-card">
+        <div class="qt-card" data-qt-card data-qt-video="video/test.mp4">
           <div class="qt-card__image">
             <img src="/img/placeholder.jpg" />
           </div>
@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="col-xs-12 col-md-4">
-        <div class="qt-card">
+        <div class="qt-card" data-qt-card data-qt-pdf="pdf/test_0.pdf">
           <div class="qt-card__image">
             <img src="/img/placeholder.jpg" />
           </div>
@@ -65,17 +65,6 @@
     </div>
   </div>
   <% include ../partials/footer.ejs %>
-  <div class="qt-overlay">
-    <div class="qt-media-container">
-      <!-- <object class="qt-media-container__pdf" data="/pdf/test_0.pdf" type="application/pdf" width="300" height="200">
-        alt : <a href="test.pdf">test.pdf</a>
-      </object> -->
-      <video class="qt-media-container__video" controls>
-        <source
-            src="/video/test.mp4"
-            type="video/mp4">
-      </video>
-    </div>
-  </div>
+  <% include ../partials/jquery.ejs %>
 </body>
 </html>

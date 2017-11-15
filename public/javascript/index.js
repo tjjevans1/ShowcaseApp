@@ -1,1 +1,3 @@
-console.log("hello world");
+import media from './components/media';
+
+media();
