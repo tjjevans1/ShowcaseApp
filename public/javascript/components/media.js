@@ -59,7 +59,6 @@ const media = () => {
 
     setTimeout(() => {
       $overlay.addClass(CLASS.OVERLAY_IS_ACTIVE);
-      $elem.laod();
     }, 10);
   });
 
