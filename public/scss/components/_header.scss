@@ -1,0 +1,19 @@
+.qt-header {
+  position: relative;
+  margin: 15px 0 30px;
+
+  &__container {
+    position: absolute;
+    top: 0;
+
+    &--left {
+      left: 0;
+      width: 200px;
+    }
+
+    &--right {
+      right: 0;
+      width: 200px;
+    }
+  }
+}

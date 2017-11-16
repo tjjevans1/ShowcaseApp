@@ -901,10 +901,24 @@ body {
 .qt-card {
   padding: 15px;
   background-color: white;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  cursor: pointer; }
 
 .qt-title {
   text-align: center; }
+
+.qt-header {
+  position: relative;
+  margin: 15px 0 30px; }
+  .qt-header__container {
+    position: absolute;
+    top: 0; }
+    .qt-header__container--left {
+      left: 0;
+      width: 200px; }
+    .qt-header__container--right {
+      right: 0;
+      width: 200px; }
 
 .qt-overlay {
   position: fixed;
@@ -932,4 +946,44 @@ body {
   .qt-media-container__video {
     height: 100%;
     width: 100%; }
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.pull-right {
+  float: right !important; }
+
+.pull-left {
+  float: left !important; }
+
+.hide {
+  display: none !important; }
+
+.show {
+  display: block !important; }
+
+.invisible {
+  visibility: hidden; }
+
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0; }
+
+.hidden {
+  display: none !important; }
+
+.affix {
+  position: fixed; }
 /*# sourceMappingURL=styles.css.map */
