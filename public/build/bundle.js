@@ -11,7 +11,8 @@ var media = function media() {
     PDF: 'qt-media-container__pdf',
     VIDEO: 'qt-media-container__video',
     OVERLAY: 'qt-overlay',
-    MEDIA_CONTAINER: 'qt-media-container'
+    MEDIA_CONTAINER: 'qt-media-container',
+    CLOSE_BUTTON: 'qt-close-button'
   };
 
   var ATTR = {
@@ -19,7 +20,8 @@ var media = function media() {
     PDF: 'data-qt-pdf',
     VIDEO: 'data-qt-video',
     OVERLAY: 'data-qt-overlay',
-    MEDIA_CONTAINER: 'data-qt-media-container'
+    MEDIA_CONTAINER: 'data-qt-media-container',
+    CLOSE_BUTTON: 'data-qt-close-button'
   };
 
   var removeContent = function removeContent() {
@@ -33,7 +35,7 @@ var media = function media() {
     var $elem = void 0;
 
     if ($card.attr(ATTR.PDF)) {
-      $elem = $('<object onLoad="console.log">').addClass(CLASS.PDF).attr('data', $card.attr(ATTR.PDF)).attr('type', 'application/pdf');
+      $elem = $('<object>').addClass(CLASS.PDF).attr('data', $card.attr(ATTR.PDF)).attr('type', 'application/pdf');
     }
 
     if ($card.attr(ATTR.VIDEO)) {
@@ -46,17 +48,18 @@ var media = function media() {
 
     var $mediaContainer = $('<div>').addClass(CLASS.MEDIA_CONTAINER).attr(ATTR.MEDIA_CONTAINER, '').append($elem);
 
-    var $overlay = $('<div>').addClass(CLASS.OVERLAY).attr(ATTR.OVERLAY, '').append($mediaContainer);
+    var $closeButton = $('<button>').addClass(CLASS.CLOSE_BUTTON).attr(ATTR.CLOSE_BUTTON, '');
+
+    var $overlay = $('<div>').addClass(CLASS.OVERLAY).attr(ATTR.OVERLAY, '').append($mediaContainer).append($closeButton);
 
     $('body').append($overlay);
 
-    setTimeout(function () {
+    $elem.ready(function () {
       $overlay.addClass(CLASS.OVERLAY_IS_ACTIVE);
-      $elem.laod();
-    }, 10);
+    });
   });
 
-  $(document).on('click', '[' + ATTR.OVERLAY + ']', function () {
+  $(document).on('click', '[' + ATTR.OVERLAY + ']', '[' + ATTR.CLOSE_BUTTON + ']', function () {
     $('[' + ATTR.OVERLAY + ']').removeClass(CLASS.OVERLAY_IS_ACTIVE);
     $('body').on('transitionend', removeContent);
   });

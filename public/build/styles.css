@@ -368,6 +368,20 @@ td,
 th {
   padding: 0; }
 
+html {
+  font-family: palatino linotype, times new roman, arial;
+  color: #2f5597;
+  font-size: 16px; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 1rem 0; }
+
 .container {
   margin-right: auto;
   margin-left: auto;
@@ -893,7 +907,8 @@ th {
 
 img {
   max-width: 100%;
-  height: auto; }
+  height: auto;
+  vertical-align: top; }
 
 body {
   background-color: #F2F2F2; }
@@ -901,24 +916,57 @@ body {
 .qt-card {
   padding: 15px;
   background-color: white;
-  margin-bottom: 30px;
-  cursor: pointer; }
+  margin: 0 30px 30px;
+  cursor: pointer;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
+  .qt-card__image {
+    padding-top: 69.191%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative; }
+  .qt-card__title {
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 10px; }
+  .qt-card__description {
+    margin-bottom: 0; }
+  .qt-card__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
 
 .qt-title {
   text-align: center; }
 
 .qt-header {
   position: relative;
-  margin: 15px 0 30px; }
+  margin: 15px 30px; }
   .qt-header__container {
     position: absolute;
     top: 0; }
     .qt-header__container--left {
       left: 0;
-      width: 200px; }
+      width: 12%; }
     .qt-header__container--right {
       right: 0;
-      width: 200px; }
+      width: 19%; }
+
+.qt-footer {
+  margin-bottom: 30px; }
+  .qt-footer__logo {
+    width: 100px;
+    margin: 0 auto; }
 
 .qt-overlay {
   position: fixed;
@@ -946,6 +994,20 @@ body {
   .qt-media-container__video {
     height: 100%;
     width: 100%; }
+
+.qt-close-button {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  background-image: url("/img/icons/close.svg");
+  background-size: 30px;
+  background-position: center;
+  background-repeat: no-repeat; }
 
 .clearfix:before, .clearfix:after {
   content: " ";
@@ -986,4 +1048,11 @@ body {
 
 .affix {
   position: fixed; }
+
+.flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
 /*# sourceMappingURL=styles.css.map */

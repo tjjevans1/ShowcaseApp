@@ -1,1 +1,6 @@
 @import 'bootstrap-sass/assets/stylesheets/bootstrap/utilities';
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}

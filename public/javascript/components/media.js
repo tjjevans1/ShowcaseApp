@@ -6,6 +6,7 @@ const media = () => {
     VIDEO: 'qt-media-container__video',
     OVERLAY: 'qt-overlay',
     MEDIA_CONTAINER: 'qt-media-container',
+    CLOSE_BUTTON: 'qt-close-button'
   };
 
   const ATTR = {
@@ -13,7 +14,8 @@ const media = () => {
     PDF: 'data-qt-pdf',
     VIDEO: 'data-qt-video',
     OVERLAY: 'data-qt-overlay',
-    MEDIA_CONTAINER: 'data-qt-media-container'
+    MEDIA_CONTAINER: 'data-qt-media-container',
+    CLOSE_BUTTON: 'data-qt-close-button'
   };
 
   const removeContent = function() {
@@ -27,7 +29,7 @@ const media = () => {
     let $elem;
 
     if ($card.attr(ATTR.PDF)) {
-      $elem = $('<object onLoad="console.log">')
+      $elem = $('<object>')
         .addClass(CLASS.PDF)
         .attr('data', $card.attr(ATTR.PDF))
         .attr('type', 'application/pdf');
@@ -50,19 +52,25 @@ const media = () => {
       .attr(ATTR.MEDIA_CONTAINER, '')
       .append($elem);
 
+    const $closeButton = $('<button>')
+      .addClass(CLASS.CLOSE_BUTTON)
+      .attr(ATTR.CLOSE_BUTTON, '')
+
     const $overlay = $(`<div>`)
       .addClass(CLASS.OVERLAY)
       .attr(ATTR.OVERLAY, '')
-      .append($mediaContainer);
+      .append($mediaContainer)
+      .append($closeButton);
+
 
     $('body').append($overlay);
 
-    setTimeout(() => {
+    $elem.ready(() => {
       $overlay.addClass(CLASS.OVERLAY_IS_ACTIVE);
-    }, 10);
+    });
   });
 
-  $(document).on('click', `[${ATTR.OVERLAY}]`, function() {
+  $(document).on('click', `[${ATTR.OVERLAY}]`,  `[${ATTR.CLOSE_BUTTON}]`, function() {
     $(`[${ATTR.OVERLAY}]`).removeClass(CLASS.OVERLAY_IS_ACTIVE);
     $('body').on('transitionend', removeContent);
   });

@@ -1,6 +1,6 @@
 .qt-header {
   position: relative;
-  margin: 15px 0 30px;
+  margin: 15px 30px;
 
   &__container {
     position: absolute;
@@ -8,12 +8,12 @@
 
     &--left {
       left: 0;
-      width: 200px;
+      width: 12%;
     }
 
     &--right {
       right: 0;
-      width: 200px;
+      width: 19%;
     }
   }
 }
