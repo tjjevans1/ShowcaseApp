@@ -19,9 +19,16 @@ var media = function media() {
     CARD: 'data-qt-card',
     PDF: 'data-qt-pdf',
     VIDEO: 'data-qt-video',
+    SUBS: 'data-qt-subs',
     OVERLAY: 'data-qt-overlay',
     MEDIA_CONTAINER: 'data-qt-media-container',
     CLOSE_BUTTON: 'data-qt-close-button'
+  };
+
+  var startVideo = function startVideo(element) {
+    element[0].play();
+
+    $('body').off('transitionend', startVideo);
   };
 
   var removeContent = function removeContent() {
@@ -44,6 +51,12 @@ var media = function media() {
       var $source = $('<source>').attr('src', $card.attr(ATTR.VIDEO)).attr('type', 'video/mp4');
 
       $elem.append($source);
+
+      if ($card.attr(ATTR.SUBS)) {
+        var $subs = $('<track>').attr('src', $card.attr(ATTR.SUBS)).attr('label', 'English').attr('kind', 'subtitles').attr('srclang', 'en').attr('default', '');
+
+        $elem.append($subs);
+      }
     }
 
     var $mediaContainer = $('<div>').addClass(CLASS.MEDIA_CONTAINER).attr(ATTR.MEDIA_CONTAINER, '').append($elem);
@@ -56,10 +69,15 @@ var media = function media() {
 
     $elem.ready(function () {
       $overlay.addClass(CLASS.OVERLAY_IS_ACTIVE);
+
+      if ($card.attr(ATTR.VIDEO)) {
+        $('body').on('transitionend', startVideo($elem));
+      }
     });
   });
 
   $(document).on('click', '[' + ATTR.OVERLAY + ']', '[' + ATTR.CLOSE_BUTTON + ']', function () {
+
     $('[' + ATTR.OVERLAY + ']').removeClass(CLASS.OVERLAY_IS_ACTIVE);
     $('body').on('transitionend', removeContent);
   });

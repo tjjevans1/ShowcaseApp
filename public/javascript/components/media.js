@@ -13,10 +13,17 @@ const media = () => {
     CARD: 'data-qt-card',
     PDF: 'data-qt-pdf',
     VIDEO: 'data-qt-video',
+    SUBS: 'data-qt-subs',
     OVERLAY: 'data-qt-overlay',
     MEDIA_CONTAINER: 'data-qt-media-container',
     CLOSE_BUTTON: 'data-qt-close-button'
   };
+
+  const startVideo = function(element) {
+    element[0].play();
+
+    $('body').off('transitionend', startVideo);
+  }
 
   const removeContent = function() {
     $(`[${ATTR.OVERLAY}]`).remove();
@@ -45,6 +52,17 @@ const media = () => {
         .attr('type', 'video/mp4');
 
       $elem.append($source);
+
+      if ($card.attr(ATTR.SUBS)) {
+        let $subs = $('<track>')
+          .attr('src', $card.attr(ATTR.SUBS))
+          .attr('label', 'English')
+          .attr('kind', 'subtitles')
+          .attr('srclang', 'en')
+          .attr('default', '');
+
+        $elem.append($subs);
+      }
     }
 
     const $mediaContainer = $(`<div>`)
@@ -67,10 +85,15 @@ const media = () => {
 
     $elem.ready(() => {
       $overlay.addClass(CLASS.OVERLAY_IS_ACTIVE);
+
+      if ($card.attr(ATTR.VIDEO)) {
+        $('body').on('transitionend', startVideo($elem));
+      }
     });
   });
 
   $(document).on('click', `[${ATTR.OVERLAY}]`,  `[${ATTR.CLOSE_BUTTON}]`, function() {
+
     $(`[${ATTR.OVERLAY}]`).removeClass(CLASS.OVERLAY_IS_ACTIVE);
     $('body').on('transitionend', removeContent);
   });

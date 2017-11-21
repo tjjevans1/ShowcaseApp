@@ -1,0 +1,60 @@
+1
+00:00:00,200 --> 00:00:08,433
+Rubidium atoms fly at speeds of hundreds of km per hour at room temperature.
+
+2
+00:00:08,500 --> 00:00:12,925
+With electromagnetic fields we can create a magneto-optical trap
+
+3
+00:00:12,950 --> 00:00:16,857
+and cool the atoms to microkelvin temperatures.
+
+4
+00:00:16,900 --> 00:00:22,150
+Atom chips can hold the atoms in a magnetic potential close to the surface.
+
+5
+00:00:22,170 --> 00:00:24,211
+When further cooling, atoms undergo 
+
+6
+00:00:24,236 --> 00:00:27,361
+a phase transition into a Bose-Einstein condensate (BEC).
+
+7
+00:00:27,400 --> 00:00:32,901
+BECs are extremely sensitive to the local magnetic field. 
+
+8
+00:00:32,926 --> 00:00:38,257
+Therefore the BEC position and shape can be manipulated with the current in the atom chip.
+
+9
+00:00:38,580 --> 00:00:42,955
+We may place a sample above the atom chip and probe its surface current with the BEC.
+
+10
+00:00:44,000 --> 00:00:47,204
+Magnetic field distribution is mapped onto the atomic distribution
+
+11
+00:00:47,229 --> 00:00:50,274
+that is imaged as the shadow of a light beam.
+
+12
+00:00:50,467 --> 00:00:52,884
+Fragmentation of the BEC  is proportional to the 
+
+13
+00:00:52,909 --> 00:00:55,074
+magnetic field component induced by the current along the surface.
+
+14
+00:00:56,260 --> 00:01:01,200
+The 2D current distribution will be mapped
+
+15
+00:01:01,225 --> 00:01:06,701
+by scanning the BEC position along the sample surface.
+
